@@ -29,7 +29,7 @@
                                          "%b"))))
 
 ;; color-theme
-(load-theme 'zenburn t)
+(load-theme 'tango-dark t)
 
 (provide 'koodev-ui)
 
