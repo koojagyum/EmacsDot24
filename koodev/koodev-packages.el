@@ -7,10 +7,12 @@
 (package-initialize)
 
 (defvar koodev-packages
-  '(color-theme
+  '(android-mode
+    color-theme
     color-theme-solarized
     ggtags
     magit
+    tango-2-theme
     zenburn-theme)
   "A list of packages to ensure are installed at lunch."
 )
@@ -45,7 +47,10 @@ Missing packages are installed automatically."
 
 ;; package initialization
 (let ((base-dir "~/.emacs.d/koodev/package-init")
-      (packages '(gtags magit org)))
+      (packages '(android
+                  gtags
+                  magit
+                  org)))
   (while packages
     (let ((init-file-path (format "%s/koodev-%s.el" base-dir (car packages))))
       (and init-file-path
