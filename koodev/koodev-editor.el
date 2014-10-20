@@ -82,6 +82,26 @@
                                  (interactive)
                                  (other-window -1)))
 
+;; which-function-mode
+;; http://www.emacswiki.org/emacs/WhichFuncMode#WhichFunctionMode
+(which-function-mode)
+(setq mode-line-format (delete (assoc 'which-func-mode
+                                      mode-line-format) mode-line-format)
+      which-func-header-line-format '(which-func-mode ("" which-func-format)))
+(defadvice which-func-ff-hook (after header-line activate)
+  (when which-func-mode
+    (setq mode-line-format (delete (assoc 'which-func-mode
+                                          mode-line-format) mode-line-format)
+          header-line-format which-func-header-line-format)))
+(dolist (mode (list
+               'c++-mode
+               'c-mode
+               'java-mode
+               'lisp-mode
+               ;; 'python-mode
+               'sh-mode))
+  (add-to-list 'which-func-modes mode))
+
 (provide 'koodev-editor)
 
 ;;; koodev-editor.el ends here
