@@ -10,7 +10,7 @@
 
 ;; scroll adjustment
 (setq scroll-margin 0
-      scroll-conservatively 100000
+      scroll-conservatively 100000)
 (setq scroll-preserve-screen-position nil)
 
 ;; display for modeline
