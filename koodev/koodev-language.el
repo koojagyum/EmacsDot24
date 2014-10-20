@@ -6,6 +6,16 @@
 (setq default-buffer-file-coding-system 'utf-8)
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
+;; Korean language environment
+(set-language-environment "Korean")
+(when (window-system)
+  (progn
+    (set-face-attribute 'default nil :font "Ubuntu Mono" :height 110)
+    (set-fontset-font "fontset-default" '(#x1100 . #xffdc)
+                      '("NanumGothicCoding" . "iso10646-1"))
+    (set-fontset-font "fontset-default" '(#xe0bc . #xf66e)
+                      '("NanumGothicCoding" . "iso10646-1"))))
+
 (provide 'koodev-language)
 
 ;;; koodev-language.el ends here
