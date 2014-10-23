@@ -20,8 +20,8 @@
 
 (message "Loading koodev's emacs initialization...")
 
-(mapc 'require '(koodev-packages
-                 koodev-custom ;; Needs to be loaded before ui, editor, ...
+(mapc 'require '(koodev-custom ;; Needs to be loaded at first
+                 koodev-packages
                  koodev-ui
                  koodev-editor
                  koodev-env
