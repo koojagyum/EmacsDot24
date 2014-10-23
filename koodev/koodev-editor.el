@@ -99,6 +99,22 @@
                             java-mode
                             sh-mode)))
 
+;; scroll without updating cursor position
+(global-set-key (kbd "M-p")
+      '(lambda ()
+         "Scroll down without updating cursor position."
+         (interactive)
+         (progn
+           (previous-line)
+           (scroll-down 1))))
+(global-set-key (kbd "M-n")
+      '(lambda ()
+         "Scroll up without updating cursor position."
+         (interactive)
+         (progn
+           (next-line)
+           (scroll-up 1))))
+
 (provide 'koodev-editor)
 
 ;;; koodev-editor.el ends here
