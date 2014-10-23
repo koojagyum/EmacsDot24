@@ -45,7 +45,7 @@
                                          "%b"))))
 
 ;; color-theme
-(load-theme 'tango-dark t)
+(load-theme koodev-color-theme t)
 
 (provide 'koodev-ui)
 
