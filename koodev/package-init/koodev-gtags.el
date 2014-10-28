@@ -11,18 +11,16 @@
      (global-set-key (kbd "M-.") 'gtags-find-tag)
      (global-set-key (kbd "C-c r") 'gtags-find-rtag)
      (global-set-key (kbd "C-c g") 'gtags-find-with-grep)
-     (global-set-key (kbd "C-c t") 'gtags-pop-stack)))
+     (global-set-key (kbd "C-c t") 'gtags-pop-stack)
+
+     (define-key gtags-select-mode-map (kbd "RET")
+       'gtags-select-tag)
+     (define-key gtags-select-mode-map (kbd "C-o")
+       'gtags-select-tag-other-window)
 
      (add-hook 'gtags-select-mode-hook
                '(lambda ()
                   (setq hl-line-face 'underline)
-                  (hl-line-mode 1)))
-
-     (add-hook 'gtags-select-mode-hook
-               '(lambda ()
-                  (define-key gtags-select-mode-map (kbd "RET")
-                    'gtags-select-tag)
-                  (define-key gtags-select-mode-map (kbd "C-o")
-                    'gtags-select-tag-other-window)))
+                  (hl-line-mode 1)))))
 
 ;;; koodev-gtags.el ends here.
