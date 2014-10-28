@@ -16,6 +16,14 @@
         (emacs-lisp . t)
         (plantuml . t)
         (sh . t)
-        ))))
+        ))
+
+     ;; to display inline image
+     (add-hook
+      'org-babel-after-execute-hook
+      (lambda ()
+        (condition-case nil
+            (org-display-inline-images)
+          (error nil))) t)))
 
 ;;; koodev-org.el ends here.
