@@ -46,7 +46,8 @@ Missing packages are installed automatically."
 (koodev-install-packages)
 
 ;; package initialization
-(let ((base-dir "~/.emacs.d/koodev/package-init")
+(let ((base-dir
+       (expand-file-name "package-init" (file-name-directory load-file-name)))
       (packages '(android
                   gtags
                   magit
