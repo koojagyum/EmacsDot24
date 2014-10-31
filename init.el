@@ -21,8 +21,8 @@
 (message "Loading koodev's emacs initialization...")
 
 (mapc 'require '(koodev-custom ;; Needs to be loaded at first
+                 koodev-env ;; Needs to be loaded at first
                  koodev-packages
                  koodev-ui
                  koodev-editor
-                 koodev-env
                  koodev-language))
