@@ -7,7 +7,9 @@
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
 ;; Korean language environment
-(set-language-environment "Korean")
+;; (set-language-environment 'korean)
+(set-language-environment 'utf-8)
+(setq default-input-method "korean-hangul")
 (when (window-system)
   (progn
     (set-face-attribute 'default nil :height 110)
