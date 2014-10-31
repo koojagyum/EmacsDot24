@@ -47,12 +47,14 @@
 ;; color-theme
 (load-theme koodev-color-theme t)
 
-;; font
-(when (window-system)
+(when mswindows-p
   (progn
-    (set-face-attribute 'default nil :height 120)
-    (add-to-list 'default-frame-alist
-                 '(font . "Consolas"))))
+    ;; font
+    (add-to-list 'default-frame-alist '(font . "Consolas-11"))
+    ;; frame window size
+    (add-to-list 'default-frame-alist '(height . 32))
+    (add-to-list 'default-frame-alist '(width . 80))))
+
 
 (provide 'koodev-ui)
 
