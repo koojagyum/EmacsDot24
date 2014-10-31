@@ -47,6 +47,13 @@
 ;; color-theme
 (load-theme koodev-color-theme t)
 
+;; font
+(when (window-system)
+  (progn
+    (set-face-attribute 'default nil :height 120)
+    (add-to-list 'default-frame-alist
+                 '(font . "Consolas"))))
+
 (provide 'koodev-ui)
 
 ;;; koodev-ui.el ends here
