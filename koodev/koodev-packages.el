@@ -45,6 +45,10 @@ Missing packages are installed automatically."
 ;; run package installation
 (koodev-install-packages)
 
+;; [FIXME] temporary for uptodate org-mode.
+(unless (package-installed-p 'org '(20141110))
+  (package-install 'org))
+
 ;; package initialization
 (let ((base-dir
        (expand-file-name "package-init" (file-name-directory load-file-name)))
