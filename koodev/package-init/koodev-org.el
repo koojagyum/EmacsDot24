@@ -24,6 +24,9 @@
       (lambda ()
         (condition-case nil
             (org-display-inline-images)
-          (error nil))) t)))
+          (error nil))) t)
+
+     ;; temporary for terminal miss translation for 'M-RET'
+     (define-key org-mode-map "\C-\M-j" 'org-insert-heading)))
 
 ;;; koodev-org.el ends here.
