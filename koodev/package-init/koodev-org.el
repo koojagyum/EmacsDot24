@@ -18,6 +18,9 @@
         (sh . t)
         ))
 
+     ;; syntax highlight on code
+     (setq org-src-fontify-natively t)
+
      ;; to display inline image
      (add-hook
       'org-babel-after-execute-hook
