@@ -7,9 +7,12 @@
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
 ;; Korean language environment
-;; (set-language-environment 'korean)
-(set-language-environment 'utf-8)
+(if mswindows-p
+    (set-language-environment 'korean)
+  (set-language-environment 'utf-8))
 (setq default-input-method "korean-hangul")
+
+(require 'unicad)
 
 (provide 'koodev-language)
 
