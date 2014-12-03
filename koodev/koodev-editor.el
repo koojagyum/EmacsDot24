@@ -28,6 +28,13 @@
 ;; enable copying to clipboard (make a region is to copy...)
 (setq x-select-enable-clibboard t)
 
+;; hexl-mode for elf file format
+(setq auto-mode-alist
+      (append
+       '(("\\.so\\'" . hexl-mode)
+         ("\\.o\\'" . hexl-mode))
+       auto-mode-alist))
+
 ;; set recent file mode
 (require 'recentf)
 (recentf-mode 1)
