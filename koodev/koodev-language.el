@@ -13,6 +13,7 @@
 (setq default-input-method "korean-hangul")
 
 (require 'unicad)
+(require 'hangul)
 
 (provide 'koodev-language)
 
