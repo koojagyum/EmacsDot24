@@ -13,7 +13,8 @@
 (setq default-input-method "korean-hangul")
 
 ;; for Macbook pro, typing f9 needs a lot to care
-(define-key hangul-im-keymap [f8] 'hangul-to-hanja-conversion)
+(eval-after-load 'hangul
+  '(define-key hangul-im-keymap [f8] 'hangul-to-hanja-conversion))
 
 (require 'unicad)
 
