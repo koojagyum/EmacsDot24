@@ -5,4 +5,4 @@ recentf
 elpa
 eshell
 tramp
-custom/custom.el
+custom/*.el

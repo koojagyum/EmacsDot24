@@ -7,23 +7,24 @@
   '(progn
      ;; org-publish setting
      (and (require 'ox-publish nil t)
+          (and (boundp 'koodev-org-basedir) koodev-org-basedir)
+          (and (boundp 'koodev-org-publishdir) koodev-org-publishdir)
           (setq org-publish-project-alist
-                ;; [FIXME] shuld be replaced with cutomized variables
-                '(("koodev-org"
-                   :base-directory "~/Workspace/private/document/org/org-article"
-                   :base-extension "org"
-                   :publishing-directory "~/Workspace/private/document/org/org-publish"
+                `(("koodev-org"
+                   :base-directory ,koodev-org-basedir
                    :recursive t
+                   :publishing-directory ,koodev-org-publishdir
+                   :base-extension "org"
                    :publishing-function org-html-publish-to-html
                    :headline-levels 4
                    :html-extension "html"
                    :auto-sitemap t
                    :exclude "common.org")
                   ("koodev-static"
-                   :base-directory "~/Workspace/private/document/org/org-article"
-                   :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
-                   :publishing-directory "~/Workspace/private/document/org/org-publish"
+                   :base-directory ,koodev-org-basedir
                    :recursive t
+                   :publishing-directory ,koodev-org-publishdir
+                   :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
                    :publishing-function org-publish-attachment)
                   ("koodev" :components ("koodev-org" "koodev-static")))))
 
