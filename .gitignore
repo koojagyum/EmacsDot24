@@ -6,3 +6,5 @@ elpa
 eshell
 tramp
 custom/*.el
+.org-id-locations
+bookmarks
