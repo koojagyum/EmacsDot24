@@ -6,6 +6,13 @@
 (eval-after-load 'org
   '(progn
      ;; org-publish setting
+     (defun koodev-org-preparation () ;; preparation-function
+       "Function to be called before publishing this project."
+       (bookmark-set "koodev_org_bookmark_before_publishing"))
+     (defun koodev-org-completion () ;; completion-function
+       "Function to be called after publishing this project."
+       (bookmark-jump "koodev_org_bookmark_before_publishing")
+       (bookmark-delete "koodev_org_bookmark_before_publishing"))
      (and (require 'ox-publish nil t)
           (and (boundp 'koodev-org-basedir) koodev-org-basedir)
           (and (boundp 'koodev-org-publishdir) koodev-org-publishdir)
@@ -19,7 +26,9 @@
                    :headline-levels 4
                    :html-extension "html"
                    :auto-sitemap t
-                   :exclude "common.org")
+                   :exclude "common.org"
+                   :preparation-function koodev-org-preparation
+                   :completion-function koodev-org-completion)
                   ("koodev-static"
                    :base-directory ,koodev-org-basedir
                    :recursive t
