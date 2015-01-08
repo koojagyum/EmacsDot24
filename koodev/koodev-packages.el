@@ -12,6 +12,7 @@
     color-theme-solarized
     ggtags
     magit
+    ox-reveal
     tango-2-theme
     zenburn-theme)
   "A list of packages to ensure are installed at lunch."
@@ -55,6 +56,7 @@ Missing packages are installed automatically."
       (packages '(android
                   gtags
                   magit
+                  reveal
                   org)))
   (while packages
     (let ((init-file-path (format "%s/koodev-%s.el" base-dir (car packages))))
