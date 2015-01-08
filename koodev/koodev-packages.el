@@ -51,21 +51,12 @@ Missing packages are installed automatically."
   (package-install 'org))
 
 ;; package initialization
-(let ((base-dir
-       (expand-file-name "package-init" (file-name-directory load-file-name)))
-      (packages '(android
-                  gtags
-                  magit
-                  reveal
-                  org)))
-  (while packages
-    (let ((init-file-path (format "%s/koodev-%s.el" base-dir (car packages))))
-      (and init-file-path
-           (file-exists-p init-file-path)
-           (load-file init-file-path))
-      )
-    (setq packages (cdr packages))
-    ))
+(defvar package-init-dir
+  (expand-file-name "package-init" (file-name-directory load-file-name))
+  "Directory for package initialization.")
+(when (file-exists-p package-init-dir)
+  (message "Package initialization in %s..." package-init-dir)
+  (mapc 'load (directory-files package-init-dir 't "^[^#].*el$")))
 
 (provide 'koodev-packages)
 
