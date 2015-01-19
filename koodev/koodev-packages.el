@@ -11,6 +11,7 @@
     color-theme
     color-theme-solarized
     ggtags
+    htmlize
     magit
     ox-reveal
     tango-2-theme
