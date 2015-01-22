@@ -61,6 +61,15 @@
             (org-display-inline-images)
           (error nil))) t)
 
+     ;; agenda
+     (define-key global-map "\C-ca" 'org-agenda)
+     (setq org-log-done t)
+     (add-hook 'after-init-hook
+               (lambda ()
+                 "Display org-togo-list"
+                 (org-todo-list)
+                 (delete-other-windows)))
+
      ;; temporary for terminal miss translation for 'M-RET'
      (define-key org-mode-map "\C-\M-j" 'org-insert-heading)))
 
