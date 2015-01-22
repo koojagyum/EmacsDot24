@@ -15,6 +15,7 @@
     magit
     ox-reveal
     tango-2-theme
+    whitespace-cleanup
     zenburn-theme)
   "A list of packages to ensure are installed at lunch."
 )
