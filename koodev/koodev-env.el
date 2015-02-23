@@ -7,7 +7,7 @@
 
 ;; emacs default startup directory(for mac os x)
 (if macosx-p
-    (if (window-system)
+    (if window-system
         (progn
           (setq default-directory "~/")
           )))
