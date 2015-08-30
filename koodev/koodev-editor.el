@@ -1,7 +1,8 @@
 ;; tab width
-(setq-default tab-width 4
-              c-basic-offset 4
-              default-tab-width 4)  ;; indent use only 4 spaces
+(setq-default tab-width 2
+              c-basic-offset 2
+              sh-basic-offset 2
+              default-tab-width 2)  ;; indent use only 2 spaces
 (setq-default indent-tabs-mode nil) ;; no tab
 
 ;; column limit 80
