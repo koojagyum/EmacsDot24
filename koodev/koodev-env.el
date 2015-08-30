@@ -10,6 +10,9 @@
     (if window-system
         (progn
           (setq default-directory "~/")
+          (setq exec-path
+                (append
+                 '("~/usr/local/bin") exec-path))
           )))
 
 (provide 'koodev-env)
