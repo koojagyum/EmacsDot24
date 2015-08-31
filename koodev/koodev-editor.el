@@ -119,6 +119,21 @@ useer."
   )
 (global-set-key (kbd "C-x F") 'find-file-as-root)
 
+;; -----------------------------------------------------------------------
+;; Gyp mode (is really python-mode)
+;; -----------------------------------------------------------------------
+(define-derived-mode gyp-mode python-mode "Gyp"
+  "Major mode for editing Generate Your Project files."
+  (setq indent-tabs-mode nil
+        tab-width 2
+        python-indent 2))
+
+(setq auto-mode-alist
+      (append
+       '(("\\.gyp\\'" . gyp-mode)
+         ("\\.gypi\\'" . gyp-mode))
+       auto-mode-alist))
+
 (provide 'koodev-editor)
 
 ;;; koodev-editor.el ends here
