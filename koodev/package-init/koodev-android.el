@@ -8,7 +8,7 @@
         'gud-mode-hook
         (lambda ()
           (add-to-list 
-           'gud-jdb-classpass
+           'gud-jdb-classpath
            (expand-file-name "platforms/android-19/android.jar" koodev-android-sdk-path))))
 
        (define-key android-logcat-map (kbd "F")
