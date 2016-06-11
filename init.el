@@ -25,4 +25,5 @@
                  koodev-packages
                  koodev-ui
                  koodev-editor
-                 koodev-language))
+                 koodev-language
+                 koodev-worklog))
