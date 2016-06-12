@@ -55,6 +55,10 @@
     (add-to-list 'default-frame-alist '(height . 32))
     (add-to-list 'default-frame-alist '(width . 80))))
 
+(when macosx-p
+  (if window-system
+      (custom-set-faces '(default ((t (:height 150 :family "Menlo")))))))
+
 
 (provide 'koodev-ui)
 
