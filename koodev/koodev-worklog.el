@@ -11,6 +11,10 @@
   "#+SEQ_TODO: TODO(t) WAIT(w) | DONE(d) PEND(p) FAIL(f)
 * Description
 * Summary
+
+#+BEGIN: clocktable :maxlevel 3 :scope subtree
+#+END:
+
 * Worklog
 * Milestones
 * References
@@ -26,12 +30,14 @@
 
 (defun koodev-worklog-new (name)
   (interactive "sNew workitem name: ")
-  (mkdir (expand-file-name name koodev-worklog-worklog-path))
-  (write-region
-   koodev-worklog-default-template nil
-   (expand-file-name
-    "worklog.org"
-    (expand-file-name name koodev-worklog-worklog-path))))
+  (let ((worklog-dir
+         (expand-file-name name koodev-worklog-worklog-path)))
+    (let ((worklog-file
+           (expand-file-name "worklog.org" worklog-dir)))
+      (mkdir worklog-dir)
+      (write-region
+       koodev-worklog-default-template nil worklog-file)
+      (find-file worklog-file))))
 
 ;; Could that applied to directory variable?
 (setq org-capture-templates
@@ -46,7 +52,7 @@
                             (org-goto-level 2)
                             (outline-get-next-sibling)
                             (org-open-line 1))))
-         "*** %^{Subprocess Description} %U")))
+         "*** %^{Subprocess Description}")))
 
 (defun org-do-promote-top-level ()
   (interactive)
@@ -93,7 +99,7 @@
     (org-up-heading-safe)
     (org-outline-is-child-of text)))
 
-    
+
 (define-key global-map "\C-cc" 'org-capture)
 
 (provide 'koodev-worklog)
