@@ -12,7 +12,7 @@
 * Description
 * Summary
 
-#+BEGIN: clocktable :maxlevel 3 :scope subtree
+#+BEGIN: clocktable :maxlevel 3
 #+END:
 
 * Worklog
@@ -44,15 +44,21 @@
       '(("t" "Todo" entry (file+headline buffer-file-name "Worklog")
          "** TODO %^{Brief Description}")
         ("s" "Subprocess" entry
-         ;; (file+function buffer-file-name (lambda () (end-of-line)))
-         ;; (file+function buffer-file-name (lambda () (beginning-of-line)))
          (file+function buffer-file-name
                         (lambda ()
-                          (progn
-                            (org-goto-level 2)
-                            (outline-get-next-sibling)
-                            (org-open-line 1))))
-         "*** %^{Subprocess Description}")))
+                          (org-goto-level 2)
+                          (outline-get-next-sibling)
+                          (org-open-line 1)
+                          ))
+         "*** %^{Subprocess Description}" :empty-lines 1)))
+
+;; Hook for the bug of :clock-in property
+(setq org-capture-after-finalize-hook (lambda ()
+                                        (and (org-goto-level 2)
+                                          (org-goto-last-child)
+                                          (org-clock-in)
+                                          )))
+
 
 (defun org-do-promote-top-level ()
   (interactive)
@@ -71,11 +77,15 @@
   (org-do-demote-until level))
 
 (defun org-goto-level (level)
+  "Going UPWARD"
   (interactive)
   (outline-back-to-heading)
-  (unless (= (org-current-level) level)
-    (org-up-heading-safe)
-    (org-goto-level level)))
+  (if (= (org-current-level) level)
+      (eval t)
+    (if (< (org-current-level) level)
+        (eval nil)
+      (org-up-heading-safe)
+      (org-goto-level level))))
 
 (defun org-level-text (level)
   (interactive)
@@ -98,6 +108,18 @@
            (t))
     (org-up-heading-safe)
     (org-outline-is-child-of text)))
+
+(defun org-goto-last-sibling ()
+  (interactive)
+  (when (org-goto-sibling)
+    (org-goto-last-sibling)))
+
+(defun org-goto-last-child ()
+  "Returns nil if there's not any child"
+  (interactive)
+  (when (org-goto-first-child)
+    (org-goto-last-sibling)
+    (eval t)))
 
 
 (define-key global-map "\C-cc" 'org-capture)
