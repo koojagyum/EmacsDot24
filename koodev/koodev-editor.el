@@ -135,6 +135,14 @@ useer."
          ("\\.gypi\\'" . gyp-mode))
        auto-mode-alist))
 
+;; start using ido
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+;; newline with indent as default
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
 (provide 'koodev-editor)
 
 ;;; koodev-editor.el ends here
