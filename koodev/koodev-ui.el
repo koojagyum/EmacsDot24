@@ -60,6 +60,18 @@
   (if window-system
       (custom-set-faces '(default ((t (:height 150 :family "Menlo")))))))
 
+;; copy path to clipboard
+;; http://stackoverflow.com/questions/2416655/file-path-to-clipboard-in-emacs
+(defun copy-file-name-to-clipboard ()
+  "Copy the current buffer file name to the clipbard."
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (when filename
+      (kill-new filename)
+      (message "Copied buffer file name '%s' to the clipboard." filename))))
+(global-set-key (kbd "C-c C-p") 'copy-file-name-to-clipboard)
 
 (provide 'koodev-ui)
 
