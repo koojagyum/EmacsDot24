@@ -8,3 +8,4 @@ tramp
 custom/*.el
 .org-id-locations
 bookmarks
+ido.last
