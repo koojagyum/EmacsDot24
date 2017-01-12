@@ -138,6 +138,7 @@ useer."
 ;; start using ido
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
+(setq ido-create-new-buffer 'alway)
 (ido-mode 1)
 
 ;; newline with indent as default
