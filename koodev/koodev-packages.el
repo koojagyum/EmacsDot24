@@ -7,8 +7,7 @@
 (package-initialize)
 
 (defvar koodev-packages
-  '(android-mode
-    color-theme
+  '(color-theme
     color-theme-solarized
     ggtags
     htmlize
