@@ -6,11 +6,6 @@
 
 (eval-after-load 'ggtags
   '(progn
-     (if mswindows-p
-         (setq exec-path
-               (append '("C:/Utility/global-6.5.3-wb/bin" 
-                         "C:/Utility/ctags58") exec-path)))
-
      (add-hook 'c-mode-common-hook
                (lambda ()
                  (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)

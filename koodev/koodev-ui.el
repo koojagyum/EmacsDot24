@@ -48,18 +48,6 @@
 ;; color-theme
 (load-theme koodev-color-theme t)
 
-(when mswindows-p
-  (progn
-    ;; font
-    (add-to-list 'default-frame-alist '(font . "Consolas-11"))
-    ;; frame window size
-    (add-to-list 'default-frame-alist '(height . 32))
-    (add-to-list 'default-frame-alist '(width . 80))))
-
-(when macosx-p
-  (if window-system
-      (custom-set-faces '(default ((t (:height 150 :family "Menlo")))))))
-
 ;; copy path to clipboard
 ;; http://stackoverflow.com/questions/2416655/file-path-to-clipboard-in-emacs
 (defun copy-file-name-to-clipboard ()

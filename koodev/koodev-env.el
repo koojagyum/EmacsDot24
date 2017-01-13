@@ -5,16 +5,8 @@
 (defvar macosx-p (string-match "darwin" (symbol-name system-type)))
 (defvar linux-p (string-match "linux" (symbol-name system-type)))
 
-;; emacs default startup directory(for mac os x)
-(if macosx-p
-    (if window-system
-        (progn
-          (setq default-directory "~/")
-          (setq exec-path
-                (append
-                 '("~/usr/local/bin") exec-path))
-          (setenv "PATH" (concat "~/usr/local/bin:" (getenv "PATH")))
-          )))
+(when macosx-p
+  (require 'koodev-macos))
 
 (provide 'koodev-env)
 
