@@ -7,6 +7,8 @@
 
 (when macosx-p
   (require 'koodev-macos))
+(when mswindows-p
+  (require 'koodev-mswindows))
 
 (provide 'koodev-env)
 
