@@ -33,4 +33,5 @@
                  koodev-ui
                  koodev-editor
                  koodev-language
-                 koodev-worklog))
+                 koodev-worklog
+                 koodev-global-keybindings))

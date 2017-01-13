@@ -11,8 +11,6 @@
                  (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
                    (ggtags-mode 1))))
 
-     
-
      ;; (global-set-key (kbd "C-c C-f") 'gtags-find-file)
      ;; (global-set-key (kbd "M-,") 'gtags-find-tag-other-window)
      ;; (global-set-key (kbd "M-.") 'gtags-find-tag)

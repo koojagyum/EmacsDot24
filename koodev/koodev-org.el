@@ -62,7 +62,6 @@
           (error nil))) t)
 
      ;; agenda
-     (define-key global-map "\C-ca" 'org-agenda)
      (setq org-log-done t)
      ;; (add-hook 'after-init-hook
      ;;           (lambda ()
@@ -71,6 +70,6 @@
      ;;             (delete-other-windows)))
 
      ;; temporary for terminal miss translation for 'M-RET'
-     (define-key org-mode-map "\C-\M-j" 'org-insert-heading)))
+     (define-key org-mode-map (kbd "C-M-j") 'org-insert-heading)))
 
 (provide 'koodev-org)

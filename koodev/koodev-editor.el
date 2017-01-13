@@ -40,7 +40,6 @@
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 ;; use shift + arrow keys to switch between visible buffers
 (require 'windmove)
@@ -48,7 +47,6 @@
 
 ;; Add line-number to the left of each line.
 (autoload 'linum-mode "linum" "toggle line numbers on/off" t)
-(global-set-key (kbd "<f5>") 'linum-mode)
 (defvar my-linum-format-string "%4d ")
 (add-hook 'linum-before-numbering-hook 'my-linum-get-format-string)
 (defun my-linum-get-format-string ()
@@ -79,16 +77,7 @@
         (setq isearch-initial-string (buffer-substring begin end))
         (add-hook 'isearch-mode-hook 'isearch-set-initial-string)
         (isearch-forward regexp-p no-recursive-edit)))))
-(global-set-key (kbd "C-c C-j") 'isearch-forward-at-point)
 
-;; key map for find related file
-(global-set-key (kbd "C-c o") 'ff-find-other-file)
-
-;; other window other-window backward keymap
-(global-set-key (kbd "C-x p") '(lambda ()
-                                 "Backwarding other-window"
-                                 (interactive)
-                                 (other-window -1)))
 
 ;; which-function-mode
 ;; http://www.emacswiki.org/emacs/WhichFuncMode
@@ -118,7 +107,6 @@ useer."
       (setq file (concat "/sudo:root@localhost:" file)))
     (find-file file))
   )
-(global-set-key (kbd "C-x F") 'find-file-as-root)
 
 ;; -----------------------------------------------------------------------
 ;; Gyp mode (is really python-mode)
@@ -140,9 +128,6 @@ useer."
 (setq ido-everywhere t)
 (setq ido-create-new-buffer 'alway)
 (ido-mode 1)
-
-;; newline with indent as default
-(define-key global-map (kbd "RET") 'newline-and-indent)
 
 (provide 'koodev-editor)
 

@@ -14,22 +14,6 @@
       scroll-conservatively 100000)
 (setq scroll-preserve-screen-position nil)
 
-;; scroll without updating cursor position
-(global-set-key (kbd "M-p")
-      '(lambda ()
-         "Scroll down without updating cursor position."
-         (interactive)
-         (progn
-           (previous-line)
-           (scroll-down 1))))
-(global-set-key (kbd "M-n")
-      '(lambda ()
-         "Scroll up without updating cursor position."
-         (interactive)
-         (progn
-           (next-line)
-           (scroll-up 1))))
-
 ;; display for modeline
 (line-number-mode t)
 (column-number-mode t)
@@ -59,7 +43,6 @@
     (when filename
       (kill-new filename)
       (message "Copied buffer file name '%s' to the clipboard." filename))))
-(global-set-key (kbd "C-c C-p") 'copy-file-name-to-clipboard)
 
 (provide 'koodev-ui)
 

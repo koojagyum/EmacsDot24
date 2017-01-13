@@ -119,6 +119,4 @@
     (eval t)))
 
 
-(define-key global-map "\C-cc" 'org-capture)
-
 (provide 'koodev-worklog)
