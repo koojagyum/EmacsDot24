@@ -2,7 +2,7 @@
 
 (require 'org-capture)
 
-(defcustom koodev-worklog-worklog-path "~/Workspace/test/worklog"
+(defcustom koodev-worklog-worklog-path "~/Workspace/Worklogs/Ongoing"
   "Default path for recording worklog"
   :type 'string
   :group 'koodev)
@@ -12,7 +12,7 @@
 * Description
 * Summary
 
-#+BEGIN: clocktable :maxlevel 3
+#+BEGIN: clocktable :maxlevel 2
 #+END:
 
 * Worklog
@@ -20,9 +20,6 @@
 * References
 * Notes
 * People
-
-# Local Variables:
-# End:
 "
   "Default worklog template"
   :type 'string
@@ -41,8 +38,8 @@
 
 ;; Could that applied to directory variable?
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline buffer-file-name "Worklog")
-         "** TODO %^{Brief Description}")
+      '(("p" "Process" entry (file+headline buffer-file-name "Worklog")
+         "** %^{Brief Description}")
         ("s" "Subprocess" entry
          (file+function buffer-file-name
                         (lambda ()
