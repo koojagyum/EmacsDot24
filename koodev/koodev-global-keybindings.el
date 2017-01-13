@@ -21,6 +21,10 @@
 (global-set-key (kbd "C-c C-j") 'isearch-forward-at-point)
 (global-set-key (kbd "C-c C-p") 'copy-file-name-to-clipboard)
 
+;; Ctrl-etc stroke
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+
 ;; Meta stroke
 ;; Scroll without moving cursor position
 (global-set-key (kbd "M-p")
