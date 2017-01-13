@@ -73,4 +73,4 @@
      ;; temporary for terminal miss translation for 'M-RET'
      (define-key org-mode-map "\C-\M-j" 'org-insert-heading)))
 
-;;; koodev-org.el ends here.
+(provide 'koodev-org)

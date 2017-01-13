@@ -51,13 +51,10 @@ Missing packages are installed automatically."
 (unless (package-installed-p 'org '(20141110))
   (package-install 'org))
 
-;; package initialization
-(defvar package-init-dir
-  (expand-file-name "package-init" (file-name-directory load-file-name))
-  "Directory for package initialization.")
-(when (file-exists-p package-init-dir)
-  (message "Package initialization in %s..." package-init-dir)
-  (mapc 'load (directory-files package-init-dir 't "^[^#].*el$")))
+;; package initializations
+(require 'koodev-magit)
+(require 'koodev-ggtags)
+(require 'koodev-org)
 
 (provide 'koodev-packages)
 

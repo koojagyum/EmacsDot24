@@ -31,4 +31,4 @@
      ;;              (hl-line-mode 1)))
      ))
 
-;;; koodev-gtags.el ends here.
+(provide 'koodev-ggtags)

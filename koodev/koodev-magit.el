@@ -11,4 +11,4 @@
      (when (not window-system)
        (set-face-background 'magit-item-highlight "block"))))
 
-;;; koodev-magit.el ends here.
+(provide 'koodev-magit)
