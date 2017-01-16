@@ -11,6 +11,9 @@
                  (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
                    (ggtags-mode 1))))
 
+     (define-key ggtags-mode-map (kbd "C-c C-f") 'ggtags-find-file)
+     (define-key ggtags-mode-map (kbd "C-c g") 'ggtags-grep)
+
      ;; (global-set-key (kbd "C-c C-f") 'gtags-find-file)
      ;; (global-set-key (kbd "M-,") 'gtags-find-tag-other-window)
      ;; (global-set-key (kbd "M-.") 'gtags-find-tag)
