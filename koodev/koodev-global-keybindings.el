@@ -2,6 +2,7 @@
 (require 'koodev-ui)
 
 ;; Single stroke
+(global-set-key (kbd "<f2>") 'eshell)
 (global-set-key (kbd "<f5>") 'linum-mode)
 (global-set-key (kbd "RET") 'newline-and-indent)
 
