@@ -21,6 +21,7 @@
 (global-set-key (kbd "C-c o") 'ff-find-other-file)
 (global-set-key (kbd "C-c C-j") 'isearch-forward-at-point)
 (global-set-key (kbd "C-c C-p") 'copy-file-name-to-clipboard)
+(global-set-key (kbd "C-c C-d") 'duplicate-line)
 
 ;; Ctrl-etc stroke
 (global-set-key (kbd "C-+") 'text-scale-increase)
