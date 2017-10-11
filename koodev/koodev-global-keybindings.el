@@ -14,6 +14,7 @@
                                  (other-window -1)))
 (global-set-key (kbd "C-x F") 'find-file-as-root)
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
+(global-set-key (kbd "C-x |") 'toggle-window-split)
 
 ;; Ctrl-c stroke
 (global-set-key (kbd "C-c a") 'org-agenda)

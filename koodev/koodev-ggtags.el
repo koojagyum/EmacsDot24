@@ -8,8 +8,13 @@
   '(progn
      (add-hook 'c-mode-common-hook
                (lambda ()
-                 (when (derived-mode-p 'c-mode 'c++-mode 'java-mode)
+                 (when (derived-mode-p 'c-mode 'c++-mode 'java-mode 'objc-mode)
                    (ggtags-mode 1))))
+     (add-hook 'python-mode-hook (lambda () (ggtags-mode 1)))
+
+     ;; Set GTAGS variables
+     (setenv "GTAGSCONF" (concat (expand-file-name "~") "/.globalrc"))
+     (setenv "GTAGSLABEL" "pygments")
 
      (define-key ggtags-mode-map (kbd "C-c C-f") 'ggtags-find-file)
      (define-key ggtags-mode-map (kbd "C-c g") 'ggtags-grep)
