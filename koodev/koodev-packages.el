@@ -13,6 +13,7 @@
     htmlize
     magit
     ox-reveal
+    swift-mode
     tango-2-theme
     whitespace-cleanup-mode
     zenburn-theme)
