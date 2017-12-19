@@ -14,22 +14,6 @@
       scroll-conservatively 100000)
 (setq scroll-preserve-screen-position nil)
 
-;; scroll without updating cursor position
-(global-set-key (kbd "M-p")
-      '(lambda ()
-         "Scroll down without updating cursor position."
-         (interactive)
-         (progn
-           (previous-line)
-           (scroll-down 1))))
-(global-set-key (kbd "M-n")
-      '(lambda ()
-         "Scroll up without updating cursor position."
-         (interactive)
-         (progn
-           (next-line)
-           (scroll-up 1))))
-
 ;; display for modeline
 (line-number-mode t)
 (column-number-mode t)
@@ -48,18 +32,6 @@
 ;; color-theme
 (load-theme koodev-color-theme t)
 
-(when mswindows-p
-  (progn
-    ;; font
-    (add-to-list 'default-frame-alist '(font . "Consolas-11"))
-    ;; frame window size
-    (add-to-list 'default-frame-alist '(height . 32))
-    (add-to-list 'default-frame-alist '(width . 80))))
-
-(when macosx-p
-  (if window-system
-      (custom-set-faces '(default ((t (:height 150 :family "Menlo")))))))
-
 ;; copy path to clipboard
 ;; http://stackoverflow.com/questions/2416655/file-path-to-clipboard-in-emacs
 (defun copy-file-name-to-clipboard ()
@@ -71,8 +43,34 @@
     (when filename
       (kill-new filename)
       (message "Copied buffer file name '%s' to the clipboard." filename))))
-(global-set-key (kbd "C-c C-p") 'copy-file-name-to-clipboard)
+
+;; Toggle Windows Split
+;; https://www.emacswiki.org/emacs/ToggleWindowSplit
+(defun toggle-window-split ()
+  (interactive)
+  (if (= (count-windows) 2)
+      (let* ((this-win-buffer (window-buffer))
+	     (next-win-buffer (window-buffer (next-window)))
+	     (this-win-edges (window-edges (selected-window)))
+	     (next-win-edges (window-edges (next-window)))
+	     (this-win-2nd (not (and (<= (car this-win-edges)
+					 (car next-win-edges))
+				     (<= (cadr this-win-edges)
+					 (cadr next-win-edges)))))
+	     (splitter
+	      (if (= (car this-win-edges)
+		     (car (window-edges (next-window))))
+		  'split-window-horizontally
+		'split-window-vertically)))
+	(delete-other-windows)
+	(let ((first-win (selected-window)))
+	  (funcall splitter)
+	  (if this-win-2nd (other-window 1))
+	  (set-window-buffer (selected-window) this-win-buffer)
+	  (set-window-buffer (next-window) next-win-buffer)
+	  (select-window first-win)
+	  (if this-win-2nd (other-window 1))))))
+
 
 (provide 'koodev-ui)
-
 ;;; koodev-ui.el ends here

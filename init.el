@@ -29,8 +29,9 @@
 
 (mapc 'require '(koodev-custom ;; Needs to be loaded at first
                  koodev-env ;; Needs to be loaded at first
-                 koodev-packages
                  koodev-ui
+                 koodev-packages
                  koodev-editor
                  koodev-language
-                 koodev-worklog))
+                 koodev-worklog
+                 koodev-global-keybindings))

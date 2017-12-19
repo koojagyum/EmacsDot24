@@ -2,7 +2,7 @@
 
 (require 'org-capture)
 
-(defcustom koodev-worklog-worklog-path "~/Workspace/Worklogs/Ongoing"
+(defcustom koodev-worklog-path-ongoing "~/Workspace/Worklogs/Ongoing"
   "Default path for recording worklog"
   :type 'string
   :group 'koodev)
@@ -28,7 +28,7 @@
 (defun koodev-worklog-new (name)
   (interactive "sNew workitem name: ")
   (let ((worklog-dir
-         (expand-file-name name koodev-worklog-worklog-path)))
+         (expand-file-name name koodev-worklog-path-ongoing)))
     (let ((worklog-file
            (expand-file-name "worklog.org" worklog-dir)))
       (mkdir worklog-dir)
@@ -118,7 +118,5 @@
     (org-goto-last-sibling)
     (eval t)))
 
-
-(define-key global-map "\C-cc" 'org-capture)
 
 (provide 'koodev-worklog)
