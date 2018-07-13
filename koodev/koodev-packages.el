@@ -18,7 +18,8 @@
     swift-mode
     tango-2-theme
     whitespace-cleanup-mode
-    zenburn-theme)
+    zenburn-theme
+    ztree)
   "A list of packages to ensure are installed at lunch."
 )
 
