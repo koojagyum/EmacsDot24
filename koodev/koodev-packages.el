@@ -9,9 +9,11 @@
 (defvar koodev-packages
   '(color-theme
     color-theme-solarized
+    elpy
     ggtags
     htmlize
     magit
+    markdown-mode
     ox-reveal
     swift-mode
     tango-2-theme
