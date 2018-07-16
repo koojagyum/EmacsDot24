@@ -55,6 +55,9 @@
          ("\\.o\\'" . hexl-mode))
        auto-mode-alist))
 
+;; elpy-mode for python
+(elpy-enable)
+
 ;; set recent file mode
 (require 'recentf)
 (recentf-mode 1)
