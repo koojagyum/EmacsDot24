@@ -19,6 +19,8 @@
      (define-key ggtags-mode-map (kbd "C-c C-f") 'ggtags-find-file)
      (define-key ggtags-mode-map (kbd "C-c g") 'ggtags-grep)
 
+     (add-hook 'ggtags-find-tag-hook 'recenter)
+
      ;; (global-set-key (kbd "C-c C-f") 'gtags-find-file)
      ;; (global-set-key (kbd "M-,") 'gtags-find-tag-other-window)
      ;; (global-set-key (kbd "M-.") 'gtags-find-tag)
