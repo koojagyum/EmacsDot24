@@ -12,6 +12,7 @@
     ggtags
     htmlize
     magit
+    markdown-mode
     ox-reveal
     swift-mode
     tango-2-theme
