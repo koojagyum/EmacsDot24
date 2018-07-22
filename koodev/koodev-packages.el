@@ -10,6 +10,7 @@
   '(color-theme
     color-theme-solarized
     elpy
+    fill-column-indicator
     ggtags
     htmlize
     jedi
