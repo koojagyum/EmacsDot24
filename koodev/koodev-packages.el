@@ -9,6 +9,7 @@
 (defvar koodev-packages
   '(color-theme
     color-theme-solarized
+    ein
     elpy
     fill-column-indicator
     ggtags
