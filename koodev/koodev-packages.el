@@ -12,6 +12,7 @@
     elpy
     ggtags
     htmlize
+    jedi
     magit
     markdown-mode
     ox-reveal
