@@ -16,6 +16,9 @@
 #+END:
 
 * Worklog
+** Misc work [/]
+*** TODO Write a description
+
 * Milestones
 * References
 * Notes
@@ -34,7 +37,16 @@
       (mkdir worklog-dir)
       (write-region
        koodev-worklog-default-template nil worklog-file)
-      (find-file worklog-file))))
+      (find-file worklog-file)
+      ;; expand headings
+      (outline-show-all)
+      ;; goto the description heading (need improvement)
+      (outline-next-heading)
+      (outline-next-heading)
+      (outline-next-heading)
+      (org-goto-last-child)
+      (org-goto-last-child)
+      )))
 
 ;; Could that applied to directory variable?
 (setq org-capture-templates
