@@ -17,7 +17,6 @@
     jedi
     magit
     markdown-mode
-    ox-reveal
     swift-mode
     tango-2-theme
     whitespace-cleanup-mode
@@ -53,10 +52,6 @@ Missing packages are installed automatically."
 
 ;; run package installation
 (koodev-install-packages)
-
-;; [FIXME] temporary for uptodate org-mode.
-(unless (package-installed-p 'org '(20141110))
-  (package-install 'org))
 
 ;; package initializations
 (require 'koodev-magit)
