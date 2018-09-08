@@ -47,7 +47,7 @@
       '((C . t)
         (emacs-lisp . t)
         (plantuml . t)
-        (sh . t)
+        (shell . t)
         ))
 
      ;; syntax highlight on code
