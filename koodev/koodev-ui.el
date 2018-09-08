@@ -32,6 +32,9 @@
 ;; color-theme
 (load-theme koodev-color-theme t)
 
+;; fill-column-indicator
+(require 'fill-column-indicator)
+
 ;; copy path to clipboard
 ;; http://stackoverflow.com/questions/2416655/file-path-to-clipboard-in-emacs
 (defun copy-file-name-to-clipboard ()

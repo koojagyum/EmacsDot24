@@ -3,7 +3,7 @@
   :prefix "koodev-"
   :group 'convenience)
 
-(defcustom koodev-color-theme 'tango-2
+(defcustom koodev-color-theme 'deeper-blue
   "The default color theme."
   :type 'symbol
   :group 'koodev)

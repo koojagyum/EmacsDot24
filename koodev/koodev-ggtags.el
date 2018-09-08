@@ -13,28 +13,14 @@
      (add-hook 'python-mode-hook (lambda () (ggtags-mode 1)))
 
      ;; Set GTAGS variables
-     (setenv "GTAGSCONF" (concat (expand-file-name "~") "/.globalrc"))
+     ;; (setenv "GTAGSCONF" (concat (expand-file-name "~") "/.globalrc"))
+     (setenv "GTAGSCONF" "/usr/local/share/gtags/gtags.conf")
      (setenv "GTAGSLABEL" "pygments")
 
      (define-key ggtags-mode-map (kbd "C-c C-f") 'ggtags-find-file)
      (define-key ggtags-mode-map (kbd "C-c g") 'ggtags-grep)
 
-     ;; (global-set-key (kbd "C-c C-f") 'gtags-find-file)
-     ;; (global-set-key (kbd "M-,") 'gtags-find-tag-other-window)
-     ;; (global-set-key (kbd "M-.") 'gtags-find-tag)
-     ;; (global-set-key (kbd "C-c r") 'gtags-find-rtag)
-     ;; (global-set-key (kbd "C-c g") 'gtags-find-with-grep)
-     ;; (global-set-key (kbd "C-c t") 'gtags-pop-stack)
-
-     ;; (define-key gtags-select-mode-map (kbd "RET")
-     ;;   'gtags-select-tag)
-     ;; (define-key gtags-select-mode-map (kbd "C-o")
-     ;;   'gtags-select-tag-other-window)
-
-     ;; (add-hook 'gtags-select-mode-hook
-     ;;           '(lambda ()
-     ;;              (setq hl-line-face 'underline)
-     ;;              (hl-line-mode 1)))
+     (add-hook 'ggtags-find-tag-hook 'recenter)
      ))
 
 (provide 'koodev-ggtags)

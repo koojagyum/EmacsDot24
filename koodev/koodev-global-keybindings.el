@@ -44,5 +44,12 @@
          (progn
            (next-line)
            (scroll-up 1))))
+(global-set-key (kbd "M-P") '(lambda ()
+                               (interactive)
+                               (scroll-down 1)))
+(global-set-key (kbd "M-N") '(lambda ()
+                               (interactive)
+                               (scroll-up 1)))
+
 
 (provide 'koodev-global-keybindings)

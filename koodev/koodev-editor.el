@@ -18,10 +18,10 @@
 )
 
 ;; tab width
-(setq-default tab-width 2
-              c-basic-offset 2
-              sh-basic-offset 2
-              default-tab-width 2)  ;; indent use only 2 spaces
+(setq-default tab-width 4
+              c-basic-offset 4
+              sh-basic-offset 4
+              default-tab-width 4)  ;; indent use only 2 spaces
 (setq-default indent-tabs-mode nil) ;; no tab
 
 ;; column limit 80
@@ -54,6 +54,20 @@
        '(("\\.so\\'" . hexl-mode)
          ("\\.o\\'" . hexl-mode))
        auto-mode-alist))
+
+;; elpy-mode for python
+(elpy-enable)
+(setq python-shell-interpreter "jupyter"
+      python-shell-interpreter-args "console --simple-prompt"
+      python-shell-prompt-detect-failure-warning nil)
+(add-to-list 'python-shell-completion-native-disabled-interpreters
+             "jupyter")
+
+;; Emacs IPython Notebook(ein) setup
+(require 'ein)
+(require 'ein-loaddefs)
+(require 'ein-notebook)
+(require 'ein-subpackages)
 
 ;; set recent file mode
 (require 'recentf)

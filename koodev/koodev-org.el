@@ -69,6 +69,10 @@
      ;;             (org-todo-list)
      ;;             (delete-other-windows)))
 
+     ;; jump between headings
+     (define-key org-mode-map (kbd "C-c n") 'outline-next-heading)
+     (define-key org-mode-map (kbd "C-c p") 'outline-previous-heading)
+
      ;; temporary for terminal miss translation for 'M-RET'
      (define-key org-mode-map (kbd "C-M-j") 'org-insert-heading)))
 

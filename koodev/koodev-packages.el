@@ -9,14 +9,20 @@
 (defvar koodev-packages
   '(color-theme
     color-theme-solarized
+    ein
+    elpy
+    fill-column-indicator
     ggtags
     htmlize
+    jedi
     magit
+    markdown-mode
     ox-reveal
     swift-mode
     tango-2-theme
     whitespace-cleanup-mode
-    zenburn-theme)
+    zenburn-theme
+    ztree)
   "A list of packages to ensure are installed at lunch."
 )
 
