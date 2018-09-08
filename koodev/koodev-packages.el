@@ -15,6 +15,7 @@
     ggtags
     htmlize
     jedi
+    json-mode
     magit
     markdown-mode
     swift-mode
