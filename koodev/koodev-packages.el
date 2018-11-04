@@ -13,11 +13,13 @@
     elpy
     fill-column-indicator
     ggtags
+    glsl-mode
     htmlize
     jedi
     json-mode
     magit
     markdown-mode
+    qml-mode
     swift-mode
     tango-2-theme
     whitespace-cleanup-mode
