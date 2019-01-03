@@ -19,7 +19,6 @@
     json-mode
     magit
     markdown-mode
-    ox-reveal
     qml-mode
     swift-mode
     tango-2-theme
