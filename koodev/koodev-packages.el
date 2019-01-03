@@ -13,8 +13,10 @@
     elpy
     fill-column-indicator
     ggtags
+    glsl-mode
     htmlize
     jedi
+    json-mode
     magit
     markdown-mode
     ox-reveal
@@ -54,10 +56,6 @@ Missing packages are installed automatically."
 
 ;; run package installation
 (koodev-install-packages)
-
-;; [FIXME] temporary for uptodate org-mode.
-(unless (package-installed-p 'org '(20141110))
-  (package-install 'org))
 
 ;; package initializations
 (require 'koodev-magit)
