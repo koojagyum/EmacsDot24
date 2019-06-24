@@ -43,7 +43,9 @@
 (setq make-backup-files nil)
 
 ;; confirm kill emacs
-(setq confirm-kill-emacs 'yes-or-no-p)
+(if (daemonp)
+    nil
+  (setq confirm-kill-emacs 'yes-or-no-p))
 
 ;; enable copying to clipboard (make a region is to copy...)
 (setq x-select-enable-clibboard t)
