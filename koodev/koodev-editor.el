@@ -65,12 +65,6 @@
 (add-to-list 'python-shell-completion-native-disabled-interpreters
              "jupyter")
 
-;; Emacs IPython Notebook(ein) setup
-(require 'ein)
-(require 'ein-loaddefs)
-(require 'ein-notebook)
-(require 'ein-subpackages)
-
 ;; set recent file mode
 (require 'recentf)
 (recentf-mode 1)
