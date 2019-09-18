@@ -7,8 +7,7 @@
 (package-initialize)
 
 (defvar koodev-packages
-  '(color-theme
-    color-theme-solarized
+  '(color-theme-modern
     elpy
     fill-column-indicator
     ggtags
@@ -20,9 +19,7 @@
     markdown-mode
     qml-mode
     swift-mode
-    tango-2-theme
     whitespace-cleanup-mode
-    zenburn-theme
     ztree)
   "A list of packages to ensure are installed at lunch."
 )
