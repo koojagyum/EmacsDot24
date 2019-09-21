@@ -24,8 +24,8 @@
               default-tab-width 4)  ;; indent use only 2 spaces
 (setq-default indent-tabs-mode nil) ;; no tab
 
-;; column limit 80
-(setq fill-column 80)
+;; column limit 75
+(setq fill-column 75)
 
 ;; display matching parentheses
 (show-paren-mode t)
